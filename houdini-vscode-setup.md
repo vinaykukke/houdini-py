@@ -1,0 +1,26 @@
+# Setting up houdini with VS Code
+
+Follow [artice](https://jurajtomori.wordpress.com/2018/02/20/houdini-tip-using-hou-module-in-visual-studio-code/) for more info.
+See [Video](https://www.youtube.com/watch?v=HldzZ5ikZhc&ab_channel=CGchameleon)
+
+- First install the latest version of houdini
+- Download the [Houdini Expression Editor](http://cgtoolbox.com/houdini-expression-editor/)
+- Extract and move to the houdini lib folder on your system, mine is at `~/Library/Preferences/houdini/19.5`.
+- Open the `houdini.env` and add the following:
+  ```
+  HOUDINI_MMB_PAN = 0 ## <= This allows you to PAN the scene without a center mouse button on a MAC
+  HOUDINI_PATH = "/Users/vinaykukke/Library/Preferences/houdini/19.5/HoudiniExt;&" ## <= This is the path of the Expression editior you just moved in the previous step
+- Open the python shell in houdini and type the following:
+  ```
+  // This will display the location of the houdini module
+  hou.__file__
+- Copy the location of the houdini module and place it in the user settings / Work space Settings (CMD+SHIFT+P && User settings (JSON)) `settings.json` file in vs code, as follows:
+  ```
+  "python.autoComplete.extraPaths": [
+    "/Users/vinaykukke/Applications/Houdini/Houdini19.5.716/Frameworks/Houdini.framework/Versions/19.5/Resources/houdini/python3.9libs/hou.py"
+  ],
+  "python.analysis.extraPaths": [
+    "/Users/vinaykukke/Applications/Houdini/Houdini19.5.716/Frameworks/Houdini.framework/Versions/19.5/Resources/houdini/python3.9libs/hou.py"
+  ],
+  "python.autoComplete.preloadModules": ["hou"] // <= This is invalid but just place it anyways, there will be no errors
+- Once that is done locate the `hython` executable and set its path as the interpreter for python in vs-code (CMD+SHIFT+P && Python: Select Interpreter) and the enter the path for my system it is in `/Applications/Houdini/Houdini19.5.716/Frameworks/Houdini.framework/Versions/19.5/Resources/bin/hython`. This will give you autocomplete in vs-code for houdini
