@@ -22,4 +22,4 @@ def getAllNodes():
   parent: hou.Node = hou.node('/obj')
   children: hou.Node = parent.children()
   nodes = [x.type().name() for x in children]
-  print(nodes)
+  print(Counter(nodes))
