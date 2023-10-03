@@ -29,8 +29,9 @@ See [Video](https://www.youtube.com/watch?v=HldzZ5ikZhc&ab_channel=CGchameleon)
 
 If there are any problems please refer the official houdini [documentation](https://www.sidefx.com/docs/houdini/hom/locations.html#disk)
 
+- Check the version of python installed in houdini and in the system - they both have to match
+- All the external packaged installed will have to be installed for the version of python you find above
 - Move to the houdini lib folder on your system, mine is at `~/Library/Preferences/houdini/19.5`.
-- Open the `houdini.env` and add the following: 
-
+- Open the `houdini.env` and add the following:
 ```
 PYTHONPATH = "/usr/local/lib/python3.11/site-packages"
