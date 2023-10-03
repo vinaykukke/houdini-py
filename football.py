@@ -21,5 +21,6 @@ def createFootball():
 def getAllNodes():
   parent: hou.Node = hou.node('/obj')
   children: hou.Node = parent.children()
+  ## List Comprehension
   nodes = [x.type().name() for x in children]
   print(Counter(nodes))

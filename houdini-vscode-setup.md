@@ -24,3 +24,13 @@ See [Video](https://www.youtube.com/watch?v=HldzZ5ikZhc&ab_channel=CGchameleon)
   ],
   "python.autoComplete.preloadModules": ["hou"] // <= This is invalid but just place it anyways, there will be no errors
 - Once that is done locate the `hython` executable and set its path as the interpreter for python in vs-code (CMD+SHIFT+P && Python: Select Interpreter) and the enter the path for my system it is in `/Applications/Houdini/Houdini19.5.716/Frameworks/Houdini.framework/Versions/19.5/Resources/bin/hython`. This will give you autocomplete in vs-code for houdini
+
+# Installing third party libraries with houdini
+
+If there are any problems please refer the official houdini [documentation](https://www.sidefx.com/docs/houdini/hom/locations.html#disk)
+
+- Move to the houdini lib folder on your system, mine is at `~/Library/Preferences/houdini/19.5`.
+- Open the `houdini.env` and add the following: 
+
+```
+PYTHONPATH = "/usr/local/lib/python3.11/site-packages"
