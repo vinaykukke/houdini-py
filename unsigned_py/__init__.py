@@ -1,5 +1,6 @@
 import hou
 from collections import Counter
+import numpy as np
 
 def createFootball():
   parentNode: hou.Node = hou.node('/obj/grid1')
@@ -24,6 +25,10 @@ def getAllNodes():
   ## List Comprehension
   nodes = [x.type().name() for x in children]
   print(Counter(nodes))
+
+def numpy_test():
+  a = np.array([127, 128, 129], dtype=np.int8)
+  print(a)
 
 def createSphere(**kwargs) -> None:
   # Create a sphere with optional keyword arguments

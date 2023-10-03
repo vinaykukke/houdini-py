@@ -1,0 +1,2 @@
+## Ignoring all packages installed with PIP
+site-packages/
